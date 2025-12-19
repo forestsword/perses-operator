@@ -129,6 +129,14 @@ type BasicAuth struct {
 	PasswordPath string `json:"password_path"`
 }
 
+type CustomAuth struct {
+	SecretSource `json:",inline"`
+	// Scheme for custom auth, for instance 'Bearer'
+	Scheme string `json:"scheme"`
+	// Path to credentials
+	CredentialsPath string `json:"credentialsPath"`
+}
+
 type OAuth struct {
 	SecretSource `json:",inline"`
 	// Path to client id
